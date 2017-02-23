@@ -1,0 +1,2 @@
+$('#like-unlike-form-div-blog<%= @blog.id %>').html('<%= j (render "like_blogs/like", blog: @blog) %>')
+$('#like-count-blog<%= @blog.id %>').html('<%= @blog.likes.count %>')

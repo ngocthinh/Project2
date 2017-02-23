@@ -1,0 +1,24 @@
+<div class="col-sm-12 comment_box">
+  <div class="panel panel-white post panel-shadow content-height">
+    <div class="post-heading">
+      <div class="pull-left meta">
+        <div class="title h5">
+          <a href="#"><b><%= comment.name %></b></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div class="col-sm-12 comment_box">
+    <div class="post-description">
+      <span id="comment_content"><%= comment.content %></span>
+    </div>
+  </div>
+  </hr>
+  <div class="col-sm-12 comment_box">
+    <h6 class="text-muted time">
+      <%= time_ago_in_words(comment.created_at)  unless comment.created_at.blank? %>
+    </h6>
+  </div>
+</div>

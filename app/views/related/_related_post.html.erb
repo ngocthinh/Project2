@@ -1,0 +1,32 @@
+<div class="row">
+  <% @posts_relate.each do |post_relate| %>
+    <div class="col-md-4">
+      <div class="product-item">
+        <div class="pi-img-wrapper">
+          <%= image_tag post_relate.image.url, class: "img-responsive resize-related-blog" %>
+          <div>
+            <% if object == "blog" %>
+              <%= link_to t("view.blog"), blog_path(I18n.locale, post_relate), class: "btn" %>
+            <% else %>
+              <%= link_to t("view.new"), news_path(I18n.locale, post_relate), class: "btn" %>
+            <% end %>
+          </div>
+        </div>
+        <h3>
+          <% if object == "blog" %>
+            <%= link_to post_relate.title, blog_path(I18n.locale, post_relate) %>
+          <% else %>
+            <%= link_to post_relate.title, news_path(I18n.locale, post_relate) %>
+          <% end %>
+        </h3>
+        <div class="pi-price"><%= post_relate.user_name %></div>
+        <% if object == "blog" %>
+          <%= link_to t("view.blog"), blog_path(I18n.locale, post_relate), class: "btn btn-view-post" %>
+        <% else %>
+          <%= link_to t("view.new"), news_path(I18n.locale, post_relate), class: "btn btn-view-post" %>
+        <% end %>
+        <div class="sticker sticker-new"></div>
+      </div>
+    </div>
+  <% end %>
+</div>

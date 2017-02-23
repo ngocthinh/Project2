@@ -1,0 +1,102 @@
+<div class="card custom-card" id="user-<%= user.id %>">
+  <div class="image">
+    <%= image_tag user.avatar.url, class: "user-index-avatar",
+      data: {toggle: "modal", target: "#user_modal#{user.id}"} %>
+  </div>
+  <div class="content">
+    <div class="header">
+      <%= link_to user.name, user_path(I18n.locale, user) %>
+    </div>
+
+    <div class="meta">
+      <%= user.position %>
+    </div>
+
+    <% if user.biography.presence %>
+      <div class="description">
+        <%= user.biography.truncate(Settings.truncate.biography) %>
+      </div>
+    <% end %>
+  </div>
+  <div class="extra content">
+    <span class="right floated">
+      <%= t "joined_in" %> <%= user.created_at.year %>
+    </span>
+    <span>
+      <i class="user icon"></i>
+      <%= user.projects.size %> <%= t ".projects" %>
+    </span>
+  </div>
+</div>
+
+<div class="modal member-modal-width fade" id="user_modal<%= user.id %>" tabindex="-1" role="dialog",
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title" id="myModalLabel"><%= t "users.about_you" %></h4>
+      </div>
+      <div class="modal-body">
+        <center>
+          <%= image_tag user.avatar.url, class: "image-modal img-circle" %>
+          <h1 class="media-heading"><%= user.name %></h1>
+          <h2 class="media-heading"><%= user.position %></h2>
+          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+        </center>
+        <div class="row clearfix">
+          <div class="table-responsive">
+            <table class="table user-table text-left">
+              <tr >
+                <td class="first"><h4>
+                  <span class="glyphicon glyphicon-thumbs-up" style="color:#f4b942">
+                  </span><%= t "users.like" %></h4>
+                </td>
+                <td class="first"><h4>
+                  <span class="glyphicon glyphicon-ok-sign" style="color:#f4b942">
+                  </span><%= t "users.rate" %></h4>
+                </td>
+              </tr>
+              <tr>
+                <td class="first"><h4>
+                  <span class="glyphicon glyphicon-list-alt" style="color:#f4b942">
+                  </span><%= t "users.skill" %></h4>
+                </td>
+                <td class="second"><h4>
+                  <span class="glyphicon glyphicon-certificate" style="color:#f4b942">
+                  </span><%= t "users.cetificate" %></h4>
+                </td>
+              </tr>
+            </table>
+            <hr>
+          </div>
+        </div>
+        <center>
+          <h5 class="text-left"><strong>
+            <span class="glyphicon glyphicon-user" >
+                <%= t "users.biography" %>
+              <h5><%= user.biography %></h5><br>
+            </span></strong>
+          </h5>
+        </center>
+        <% if user_signed_in? && params.has_key?(:project_id) %>
+          <%= form_for [@project, Participate.new], remote: true,
+           url: project_participates_path(I18n.locale, @project) do |f| %>
+            <%= f.text_field :position, class: "form-control input-md", placeholder: true %>
+            <%= f.hidden_field :user_id, value: user.id %>
+            <%= f.hidden_field :project_id, value: @project.id %>
+            <div class="modal-footer">
+              <center>
+                <%= f.submit t("users.add_member"), class: "btn btn-primary" if user_signed_in? %>
+              </center>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

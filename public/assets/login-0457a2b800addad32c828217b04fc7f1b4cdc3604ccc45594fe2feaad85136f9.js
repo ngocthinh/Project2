@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#about_team-button").click(function(){return $("html,body").animate({scrollTop:$("#about_team").offset().top}),!1})}),$(document).ready(function(){new SimpleMDE({element:document.getElementById("markdown")})});

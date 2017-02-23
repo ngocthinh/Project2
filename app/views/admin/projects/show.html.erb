@@ -1,0 +1,220 @@
+<section id="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <div>
+            <div class="left">
+              <h2 class="font-size-40"><%= @project.name %></h2>
+              <div class="disable-cancela">
+                <%= rating_for @project, :rating, disable_after_rate: false, enable_half: true, cancel: false %>
+              </div>
+              </br>
+            </div>
+            <div class="right">
+              <div class="slideouticons">
+                <input type="checkbox" id="togglebox" />
+                <label for="togglebox" class="mainlabel fa fa-share-alt"></label>
+                <div class="iconswrapper">
+                  <% if user_signed_in? %>
+                    <ul>
+                      <li>
+                        <%= link_to "", edit_project_path(I18n.locale, @project),
+                          class: "fa fa-pencil-square-o", title: t("edit_project") %>
+                      </li>
+                      <li>
+                        <%= link_to "", project_participates_path(I18n.locale, @project),
+                          class: "fa fa-plus-square", title: t("add_member_project") %>
+                      </li>
+                      <li>
+                        <%= link_to "", "", class: "fa fa-trash-o", title: t("delete_project") %>
+                      </li>
+                    </ul>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="post-meta text-uppercase">
+            <span><%= @project.created_at %></span>
+            <span><%= t "in" %> <%= link_to @project.category.name, "" %></span>
+          </div>
+          <button class="ui facebook button">
+            <i class="facebook icon"></i>
+            <%= t "facebook" %>
+          </button>
+          <button class="ui twitter button">
+            <i class="twitter icon"></i>
+            <%= t "twitter" %>
+          </button>
+          <button class="ui google plus button">
+            <i class="google plus icon"></i>
+            <%= t "google_plus" %>
+          </button>
+          <button class="ui vk button">
+            <i class="vk icon"></i>
+            <%= t "vk" %>
+          </button>
+          <button class="ui linkedin button">
+            <i class="linkedin icon"></i>
+            <%= t "linkedin" %>
+          </button>
+          <button class="ui instagram button">
+            <i class="instagram icon"></i>
+            <%= t "instagram" %>
+          </button>
+          <button class="ui youtube button">
+            <i class="youtube icon"></i>
+            <%= t "youtube" %>
+          </button>
+          <span class="st-border"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="project">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div>
+          <article>
+            <div class="post-thumb">
+                <div class="vc_single_image-wrapper   vc_box_border_grey">
+                  <div id="portfolio_slide" class="carousel slide"
+                    data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                      <% @support.images.each_with_index do |image, index| %>
+                        <div class="item <%= set_class_by_index index %>">
+                            <%= image_tag image.image.url ,
+                              class: "img-responsive img-centered
+                            img-slide img-project" %>
+                        </div>
+                      <% end %>
+                      <ol class="carousel-indicators">
+                        <% @support.images.each_with_index do |image, index| %>
+                          <li data-target="#portfolio_slide"
+                            data-slide-to=<%= index %>
+                            class="<%= set_class_by_index index %>">
+                          </li>
+                        <% end %>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </article>
+        </div>
+        <hr>
+        <br/ >
+      </div>
+      <div class="col-md-4">
+        <div class="row info-project">
+          <div class="col-md-12">
+            <span class="feature-project">
+            </span><p id="project-description"><%= @project.description %></p>
+          </div>
+          <div class="col-md-12 padding-top-10">
+            <p class="text-left">
+              <span class="glyphicon glyphicon glyphicon-th-large gold"></span>
+              <b> <%= t "server_informations" %>: </b><br />
+              <%= @project.server_information %>
+            </p>
+          </div>
+          <div class="col-md-12 padding-top-10">
+            <p class="text-left">
+              <span class="glyphicon glyphicon-star gold"></span>
+              <b> <%= t "core_features" %>: </b><br />
+              <%= @project.core_features %>
+            </p>
+          </div>
+          <div class="col-md-12 padding-top-10">
+            <p class="text-left">
+              <span class="glyphicon glyphicon-list-alt gold"></span>
+              <b> <%= t "platform" %>: </b><br />
+              <%= @project.platform %>
+            </p>
+          </div>
+          <div class="col-md-12 padding-top-10">
+            <p class="text-left">
+              <span class="glyphicon glyphicon-cloud gold"></span>
+              <b> <%= t "url" %>: </b><br />
+              <%= link_to @project.url, @project.url %>
+            </p>
+          </div>
+          <div class="col-md-12 padding-top-10">
+            <p class="text-left">
+              <span class="glyphicon glyphicon-globe gold"></span>
+              <b> <%= t "pm_url" %>: </b><br />
+              <%= link_to @project.pm_url, @project.pm_url %>
+            </p>
+          </div>
+          <div class="col-md-12 padding-top-10">
+            <p class="text-left">
+              <span class="glyphicon glyphicon-star gold"></span>
+              <b> <%= t "git_repository" %>: </b><br />
+              <%= link_to @project.git_repository, @project.git_repository %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row margin-bottom-50">
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <%= link_to t("member_of_project") , "#member_of_project", data: {toggle: "tab"} %>
+          </li>
+          <li class="">
+            <%= link_to t("comments"), "#comment", data: {toggle: "tab"} %>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="member_of_project">
+            <div class="row margin-bottom-50">
+              <%= render "member_of_project", object: @project.users %>
+            </div>
+          </div>
+          <div class="tab-pane" id="comment">
+            <div class="row margin-bottom-50">
+              </br>
+              <%= render partial: "comments/comment_form", locals: {project: @project}%>
+            </div>
+            <div class="entries" id="entries">
+            <%= render @comments %>
+          </div>
+          <center>
+            <%= link_to_next_page @comments, (t "load_more"), remote: true,
+             id: "load_more",class: "btn btn-primary" %>
+           </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <div class="row">
+    <div class="panel panel-chat panel-default">
+      <div class="panel-heading">
+        <a href="#" id="chatMinimize" onclick="return false"><span>
+          <%= t "chat_box" %></span></a>
+        <a href="#" id="chatClose" onclick="return false">
+          <i class="glyphicon glyphicon-remove"></i></a>
+        <div class="clearFix"></div>
+      </div>
+      <% if @project.messages.any? %>
+        <div class="panel-body msg_container_base" id="messages" data-chatroom= <%= @project.id %> >
+          <%= render @project.messages %>
+        </div>
+      <% else %>
+        <div class="panel-body hidden" id="messages" data-chatroom= <%= @project.id %> ></div>
+      <% end %>
+      <div class="panel-footer">
+        <%= render partial: "messages/message_form",
+          locals: {message: @message, project: @project} %>
+      </div>
+    </div>
+  </div>
+</div>

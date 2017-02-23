@@ -1,0 +1,21 @@
+<div class="container form-project-new ">
+  <div class="col-md-12" >
+  <h2><%= t "add_member" %></h2>
+
+  </div>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home"><%= t "member" %></a></li>
+    <li><a data-toggle="tab" href="#menu2"><%= t "member_of_project" %></a></li>
+    <%= link_to "Hoàn Thành", project_path(I18n.locale, @project), class: "btn btn-success" %>
+  </ul>
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <%= render "shared/list_user"%>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <div id="project-members-<%= @project.id %>" class="ui link cards margin-top-15">
+        <%= render @participates %>
+      </div>
+    </div>
+  </div>
+</div>

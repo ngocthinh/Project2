@@ -1,0 +1,3 @@
+$('#project-members-<%= @project.id %>').html("<%= j render @project.participates %>");
+$('#member-<%= @participate.user_id %>').remove();
+$('#users-<%= @project.id%>').append("<%= j render @participate.user %>");

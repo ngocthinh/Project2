@@ -1,0 +1,29 @@
+<header class="header-block-line">
+  <h4 class="title"><%= t "certifications" %></h4>
+</header>
+<div class="col-lg-12">
+  <div class="main-box clearfix">
+    <div class="main-box-body clearfix">
+      <ul class="widget-users row">
+        <% object.each do |certificate_user| %>
+          <li class="col-md-4 list-style-none">
+            <div>
+              <div class="img left">
+                <%= image_tag certificate_user.certification.image.url, class: "img-certificate" %>
+              </div>
+              <div class="details detail-profile">
+                <div class="name height-30">
+                  <%= link_to certificate_user.certification.name, "" %>
+                </div>
+                <div class="time online">
+                  <i class="fa fa-check-circle"></i> <%= t "certification" %>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

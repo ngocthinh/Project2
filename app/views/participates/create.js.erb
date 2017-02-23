@@ -1,0 +1,4 @@
+$('#project-members-<%= @project.id %>').append("<%= j render @participate %>");
+$('#user-<%= @participate.user.id %>').remove();
+$('#user_modal<%= @participate.user.id %>').fadeOut('fast');
+$('.modal-backdrop').remove();

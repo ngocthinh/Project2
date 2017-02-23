@@ -1,0 +1,90 @@
+<%= form_for @user, url: user_path, html: {method: :put} do |f| %>
+  <div class="container margin-top-2">
+    <div class="row margin-top-100">
+      <div class="col-lg-8 col-md-7 col-sm-7 card margin-left-25">
+        <div class="mywork-reg">
+          <div class="mywork-form-reg main-detail-job">
+            <div class="company-info">
+              <div class="job-company-info-edit ">
+                <h3 class="comp-name"><%= t "profile" %></h3>
+                <div class="boxcontact-copmpany">
+                  <table class="ui very basic collapsing celled table width-100">
+                    <tbody>
+                      <tr>
+                        <td class="width-30">
+                          <strong><%= t "name" %>:</strong>
+                        </td>
+                        <td>
+                          <%= f.text_field :name, class: "form-control input-md" %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="width-30">
+                          <strong><%= t "user_name" %>:</strong>
+                        </td>
+                        <td>
+                          <%= f.text_field :user_name, class: "form-control input-md" %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="width-30">
+                          <strong><%= t "email" %>:</strong>
+                        </td>
+                        <td>
+                          <%= f.text_field :email, class: "form-control input-md" %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="width-30">
+                          <strong><%= t "phone-user" %>:</strong>
+                        </td>
+                        <td>
+                          <%= f.text_field :phone, class: "form-control input-md" %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="width-30">
+                          <strong><%= t "user_position" %>:</strong>
+                        </td>
+                        <td>
+                          <%= f.text_field :position, class: "form-control input-md" %>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="block_info contentdef margin-right-15">
+                <div class="desjob-company col-md-12">
+                  <header class="header-block-line">
+                    <h4 class="title"><%= t "biography" %></h4>
+                  </header>
+                  <%= f.text_field :biography, class: "form-control input-md" %>
+                </div>
+                <div class="button-edit">
+                  <%= f.submit t(".save"), class: "btn btn-success" %>
+                  <%= link_to t(".cancel"), user_path(I18n.locale, @user),
+                    class: "btn btn-default" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-4 card margin-left-25">
+        <div class="main-box clearfix">
+          <header class="main-box-header clearfix">
+            <center><h3><%= @user.name %></h3></center>
+          </header>
+          <div class="main-box-body clearfix">
+              <%= image_tag f.object.avatar.url,
+                class: "profile-img img-responsive center-block img-profile-user" %>
+            <div class="file-field-user"><%= f.file_field :avatar %></center>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="margin-bottom-50"></div>
+  </div>
+<% end %>

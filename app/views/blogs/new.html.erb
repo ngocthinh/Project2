@@ -1,0 +1,55 @@
+<section id="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <h1><%= t "users.new.save" %> <%= t "header.menu.blog" %></h1>
+          <span class="st-border"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="background-white">
+  <%= form_for current_user.posts.new, url: blogs_path(), html: {class: "form-horizontal"} do |f| %>
+    <fieldset>
+      <div class="form-group">
+        <%= f.label :title, class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :title, class: "form-control input-md", required: true %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :image, class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.file_field :image %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :category, class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.select :category_id, options_for_select(@categories.map{|c| [c.name, c.id]},
+            f.object.category_id), {},
+            {class: "form-control selectpicker", "data-live-search": true} %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :content, class: "col-md-2 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_area :content, class: "form-control input-md",
+            placeholder: true, id: "markdown" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-5 control-label" for="save"></label>
+        <div class="col-md-7">
+          <%= f.submit t("projects.new.save") , class: "btn btn-primary" %>
+          <%= button_tag t("projects.new.reset"), type: :reset, class: "btn btn-inverse"%>
+        </div>
+      </div>
+    </fieldset>
+  <% end %>
+</section>

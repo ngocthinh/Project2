@@ -1,0 +1,249 @@
+ja:
+  project_not_found: "Project not found"
+  available: "User is available in your project"
+  log_out: "Log out"
+  social_login: "Login with social"
+  login_twitter: "Login via Twitter"
+  login_facebook: "Login via Facebook"
+  sign_up: "Sign Up"
+  user: "User"
+  user_name: "User name"
+  email: "Email "
+  user_position: "Position"
+  password: "Password *"
+  password_confirmation: "REPEAT PASSWORD *"
+  agree_account: "By creating an account you agree to our "
+  terms_privacy: "Terms & Privacy"
+  sign_in: "Sign in"
+  show: "Show"
+  lg_field_email: "youremail@gmail.com"
+  lg_field_pass: "12345678"
+  lg_field_name: "john kerry"
+  rg_field_username: "john.kerry"
+  rg_field_position: "Ruby on Rails"
+  menu_sign_in: "Sign in"
+  menu_sign_up: "Sign up"
+  menu_edit_profile: "Edit profile"
+  menu_sign_out: "Sign out"
+  title_home: "Portfolio"
+  about_us: "About us"
+  close: "Close"
+  login: "Login"
+  read_more: "View more"
+  image_error: "should be less than 500KB"
+  liked: "Liked"
+  errors: "Errors"
+  message: "Message"
+  contact_us: "Contact us"
+  contact_detail: "Since our foundation in 2012, we have been combining innovation and global experience from various countries such as Vietnam, Bangladesh, Cambodia, Nigeria, Kazakhstan, Japan, etc."
+  contact_address: "6F, Vinh Trung Plaza, 255~257 Hung Vuong Str., Vinh Trung ward, Thanh Khe district, Da Nang"
+  contact_cofirmation: "Contact cofirmation"
+  send_message: "Send the message"
+  dear: "Dear"
+  send_mail_feedback: "Thank you for contacting Web.cc Customer Service.  We have received your email and our Customer Service team will be responding to you soon."
+  contacts:
+    create:
+      success: "Thank you for contact with us, plese wait Customer Service team will be responding to you soon."
+      fail: "sorry! something is wrong, you need send message again!"
+  comment : "was comment"
+  send: "Send"
+  projects: "Projects"
+  joined_in: "Joined in"
+  member_framgia: "Member"
+  header:
+    menu:
+      home: "Home"
+      project: "Project"
+      new: "New"
+      blog: "Blog"
+      idea: "Suggest idea"
+      contact: "Contact"
+      about_team: "About us"
+      create_account: "Create Account"
+  footer:
+    menu:
+      home: "Home |"
+      blog: "Blog |"
+      about: "About |"
+      faq: "Faq |"
+      contact: "Contact |"
+    company-name: "Copyright 2016 Framgia, Inc. All rights reserved."
+    address: "6F Big C Tower, Da Nang, Viet Nam"
+    phone: "84-4-3795-5417"
+    email: "hr_team@framgia.com"
+    introduce: "About Framgia Viet Nam"
+    description: "Framgia Vietnam is a company 100% Japan funded specializing
+    in design, development applications such as mobile phone software, games,
+    social and website applications."
+    follow_us: "Follow us"
+  shared:
+    error_messages:
+      error: "error"
+  social:
+    facebook: "https://www.facebook.com/FramgiaVietnam"
+    github: "https://github.com/framgia/"
+    link: "https://www.linkedin.com/company/3341218?trk=tyah&amp;
+      trkInfo=clickedVertical%3Acompany%2CclickedEntityId%
+      3A3341218%2Cidx%3A2-1-2%2CtarId%3A1465497556522%2Ctas%3Aframgia%20vietnam"
+  images:
+    create_failed: "File apply only image"
+  manage:
+    manage_project: "Manage project"
+    our_project: "Our Projects"
+    manage: "Manage"
+    character:
+      first: "With personality."
+      second: "For software professionals."
+  list_team:
+    member1: "Hoang Nhac Trung"
+    member2: "Nguyen Van Tran Anh"
+    member3: "Nguyen Phuoc Tien"
+    member4: "Nguyen Ngoc Thinh"
+    member5: "Ky Huu Hai"
+    speak1: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Amet dolore nesciunt natus ullam possimus quas obcaecati suscipit voluptate facilis cum"
+  position:
+    manage: "Manage"
+    dev: "Developer"
+  projects:
+    remove: "Remove"
+    label: "Project"
+    add_member: "Add Member"
+    created: "Project was successfully created."
+    create_failed: "Project was create failed ."
+    check_max_files: "Project must not contain more than 5 files and least one file"
+    new:
+      add_a_photo: "Add a Photo"
+      save: "Save"
+      reset: "Reset"
+  users:
+    label_position: "Position of him/her for your project:"
+    about_you: "More about him/her"
+    add_member: "Add Member"
+    label: "Select member for Project"
+    like: "Like: 20"
+    rate: "Rate: 30"
+    biography: "Biography :"
+    created: "User was successfully created."
+    create_failed: "Project was create failed ."
+    new:
+      save: "Create"
+  participates:
+    created: "Member was successfully added."
+    create_failed: "Member was add failed "
+  helpers:
+    placeholder:
+      project:
+        name: "Name"
+        url : "URL"
+        core_features: "Core Features"
+        platform: "Platform"
+        server_information: "Server Information"
+        git_repository: "Git Repository"
+        realease_note: "Release Note"
+        save: "Save"
+        reset: "Reset"
+  introduce:
+    portfolio: "Framgia Company has great opportunities to support amazing
+      companies that are creating great values in their industries. Our active
+      portfolio represents outstanding projects we have done. We always focus on
+      continuous improvement, scope flexibility, team input, and delivering
+      essential quality products."
+  participate:
+    description: "Position"
+    available: "User's not available"
+  portfolio: "Portfolio"
+  feature_project: "MEMBER OF PROJECT"
+  member_of_project: "Member of project"
+  close: "Close"
+  join_project: "Join this project"
+  server_informations: "Server information"
+  core_features: "Core feature"
+  record_isnt_exist: "Not found this action"
+  errors:
+    messages:
+      required: "must exist"
+      taken: "has already been taken"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Validation failed: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Cannot delete record because a dependent %{record} exists"
+          has_many: "Cannot delete record because dependent %{record} exist"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "cannot be blank"
+            password:
+              blank: "cannot be blank"
+            name:
+              blank: "cannot be blank"
+  sologan:
+    first: "Awesome with us"
+    second: "creative world"
+  employee: "Employees"
+  complete_project: "Completed Projects"
+  client: "Clients"
+  cup_of_coffee: "Cups of Coffee"
+  question:
+    title_1: "ARE YOU READY TO"
+    title_2: "MAKE IT AWESOME WITH US?"
+    description: "''Framgia'' is not a reserved word used to refer to the office where
+    you work, nor only those provisions, institutions, and especially not
+    only legal status or the company's charter capital. '' Framgia '' is the term used to
+    only individual among you, culture is due to your Framgia that out.
+    Let's connect a lot of fellow, and create lots
+    value ''awesome''. More! "
+  member: "Member"
+  in: "In"
+  by: "By"
+  facebook: "Facebook"
+  twitter: "Twitter"
+  google_plus: "Google Plus"
+  vk: "VK"
+  linkedin: "linkedIn"
+  instagram: "instagram"
+  youtube: "YouTube"
+  like: "Like"
+  views:
+    pagination:
+      previous: "<"
+      first: "<<"
+      next: ">"
+      last: ">>"
+  format:
+    datetime_create: "%m, %d %Y"
+  categories: "Categories"
+  news: "News"
+  format:
+    datetime_create: "%m, %d %Y"
+  view:
+    blog: "View blog"
+    new: "View new"
+  comments: "Write comments"
+  edit_project: "Edit project"
+  delete_project: "Delete this project"
+  add_member_project: "Add member into project"
+  certification: "Certification"
+  certifications: "Certification"
+  biography: "Biography"
+  techniques: "Techniques"
+  blog_of_user: "Blog of "
+  experience: "Experience"
+  rank: "Rank"
+  send_message: "Send message"
+  date_member_join: "Date join "
+  profile: "Profile"
+  name: "Name"
+  phone-user: "Phone"
+  online: "Online"
+  notifications: "Notifications"
+  view_all: "View all"
+  back_home: "Back home"
+  write_blog: "Write blog"
+  write_new: "Write new"
+  slide: "Slide"
+  admin:
+    home: "Admin home"

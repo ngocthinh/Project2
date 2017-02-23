@@ -1,0 +1,109 @@
+<section id="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <h1><%= t "edit_project" %></h1>
+          <span class="st-border"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%= form_for @project, url: project_path, html: {method: :put} do |f| %>
+  <%= render "shared/error_messages", object: @project %>
+  <section id="project">
+    <div class="container edit_project">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="single-blog">
+            <article>
+              <div class="post-article">
+                <div class="col-md-6 margin-20">
+                  <p class="text-left">
+                  <b> <%= t "name" %>: </b><br />
+                    <%= f.text_field :name, class: "form-control input-md",
+                      required: true %>
+                  </p>
+                </div>
+                <div class="col-md-6 margin-20">
+                  <p class="text-left">
+                  <b> <%= t "description" %>: </b><br />
+                    <%= f.text_field :description, class: "form-control input-md",
+                      required: true %>
+                  </p>
+                </div>
+                <br />
+                <div class="col-md-6">
+                  <p class="text-left">
+                  <b> <%= t "realease_note" %>: </b><br />
+                    <%= f.text_field :realease_note, class: "form-control input-md",
+                      required: true %>
+                  </p>
+                </div>
+                <% Project::PRIVATE_ATTRIBUTES.each do |key, value| %>
+                  <div class="col-md-6">
+                    <p class="text-left">
+                    <b> <%= key %> : <%= radio_button_tag key, Settings.public %>
+                    <%= t "public" %>
+                    <%= radio_button_tag key, Settings.private, checked: true %>
+                    <%= t "private" %></b><br />
+                    <%= f.text_field key, class: "form-control input-md", required: true %></p>
+                  </div>
+                <% end %>
+                <div class="col-md-6">
+                  <p class="text-left">
+                  <b> <%= t "core_features" %>: </b><br />
+                    <%= f.text_field :core_features, class: "form-control input-md",
+                      required: true %>
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p class="text-left">
+                  <b> <%= t "platform" %>: </b><br />
+                    <%= f.text_field :platform, class: "form-control input-md",
+                      required: true %>
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p class="text-left">
+                  <b> <%= t "url" %>: </b><br />
+                    <%= f.text_field :url, class: "form-control input-md",
+                      required: true %>
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <p class="text-left">
+                  <b> <%= t "realease_note" %>: </b><br />
+                    <%= f.text_field :realease_note, class: "form-control input-md",
+                      required: true %>
+                  </p>
+                </div>
+                <div class="form-group">
+                  <div class="col-md-6">
+                    <table class="user-photo-form">
+                      <%= f.fields_for :images do |image| %>
+                        <%= render "image_fields", f: image %>
+                      <% end %>
+                      <%= link_to_add_association (t "add_a_photo"),
+                       f, :images, class: "btn btn-warning" %>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="button-edit">
+                  <%= f.submit t(".save"), class: "btn btn-success" %>
+                  <%= link_to t(".cancel"), project_path(I18n.locale, @project),
+                    class: "btn btn-default" %>
+                </div>
+              </div>
+            </article>
+          </div>
+          <hr>
+          <br/ >
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>

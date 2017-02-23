@@ -1,0 +1,32 @@
+blockquote {
+  padding: 0px 1px;
+  margin: 0 0;
+  font-size: 105%;
+  border-left: 3px solid rgba(0,0,0,0.1);
+}
+
+.markdown table {
+  border-collapse: collapse;
+  line-height: 20px;
+}
+
+.markdown table thead {
+  background-color: rgba(0,0,0,0.05);
+}
+
+.markdown table tbody {
+  color: rgba(0,0,0,0.6);
+}
+
+.markdown table th, .markdown table td {
+  padding: 5px 7px;
+  border: 1px solid #ddd;
+}
+
+code {
+  background-color: #f7f7f7;
+  padding: 3px;
+  font-family: Consolas, monospace;
+  font-size: 10px;
+  width: 400px;
+}

@@ -1,0 +1,31 @@
+$(document).ready(function() {
+  submitNewMessage();
+});
+
+<% Project.all.each do |project| %>
+  App['room' + <%= project.id %>] = App.cable.subscriptions.create({channel: 'MessagesChannel',
+    room: <%= project.id %>}, {
+    received: function(data) {
+     $("[data-chatroom='" + this.chatroomId + "']").removeClass('hidden')
+      return $("[data-chatroom='" + this.chatroomId + "']").append(data.message);
+    },
+
+    setChatroomId: function(chatroomId) {
+      this.chatroomId = chatroomId
+    }
+  });
+<% end %>
+
+function submitNewMessage(){
+  $('#submit_message').keydown(function(event) {
+    if (event.keyCode == 13) {
+      var msg = event.target.value
+      var chatroomId = $("[data-chatroom]").data().chatroom
+      App['room' + chatroomId].setChatroomId(chatroomId)
+      App['room' + chatroomId].send({message: msg})
+      $('[data-textarea="message"]').val("")
+      $('.panel-body').stop().animate({
+        scrollTop: $('.panel-body')[0].scrollHeight}, 800);
+    }
+  });
+}

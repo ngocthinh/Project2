@@ -1,0 +1,13 @@
+<div class="like-unlike-form-div-blog" id="like-unlike-form-div-blog<%= blog.id %>">
+  <% if @like.present? %>
+    <%= render "like_blogs/unlike", blog: blog %>
+  <% else %>
+    <%= render "like_blogs/like", blog: blog %>
+  <% end %>
+</div>
+<div class="like-count-div-blog">
+  <span class="like-count" id="like-count-blog<%= blog.id %>">
+    <%= blog.likes.count %>
+  </span>
+  <%= t "liked" %>
+</div>

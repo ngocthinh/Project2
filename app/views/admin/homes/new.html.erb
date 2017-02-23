@@ -1,0 +1,68 @@
+<section id="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <h1><%= t "edit_home" %></h1>
+          <span class="st-border"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%= form_for [:admin, @home], html: {class: "form-horizontal"} do |f| %>
+  <fieldset>
+    <div class="form-group">
+      <%= f.label :title, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_field :title, class: "form-control input-md",
+          placeholder: true, required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :sologan, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_field :sologan, class: "form-control input-md",
+          placeholder: true, required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_area :description, class: "form-control input-md",
+          placeholder: true, required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :language, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+       <% Home.languages.keys.each do |language| %>
+         <%= f.radio_button :language, language %>
+         <%= f.label language.to_sym %>
+       <% end %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :images, class: "col-md-4 control-label"%>
+      <div class="col-md-4">
+        <table class="user-photo-form">
+          <%= f.fields_for :images do |image| %>
+            <%= render "image_fields", f: image %>
+          <% end %>
+          <%= link_to_add_association (t "add_a_photo"), f, :images, class: "btn btn-default" %>
+        </table>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="save"></label>
+      <div class="col-md-8">
+        <%= f.submit t("save") , class: "btn btn-primary" %>
+        <%= button_tag t(".reset"), type: :reset, class: "btn btn-inverse"%>
+      </div>
+    </div>
+  </fieldset>
+<% end %>

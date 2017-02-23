@@ -1,0 +1,59 @@
+<section id="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <h1><%= t "news" %></h1>
+          <span class="st-border"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container list-news">
+  <div class="row">
+    <div class="col-md-9">
+      <ul class="news">
+        <% @news.each do |new_item| %>
+          <li class="news-item">
+            <div class="news-thumbnails col-4-new">
+              <%= image_tag new_item.image.url %>
+            </div>
+            <div class="content-news col-8-new">
+              <h4 class="post-title">
+                <%= link_to new_item.title, news_path(I18n.locale, new_item) %>
+              </h4>
+              <div class="info">
+                <div class="price">
+                  <div class="ribbon">
+                    <%= t "news" %>
+                  </div>
+                  <div class="triangle"></div>
+                </div>
+                <div class="post-meta text-uppercase">
+                    <span>
+                      <%= I18n.l new_item.created_at, format: t("format.datetime_create") %>
+                    </span>
+                    <span>
+                      <%= t "in" %>
+                      <%= link_to new_item.category.name, news_index_path(category: new_item.category.id) %>
+                    </span>
+                    <span><%= t "by" %> <%= link_to new_item.user.name, "" %></span>
+                  </div>
+              </div>
+              <p class="description">
+                <%= new_item.content.truncate(Settings.description) %>...
+              </p>
+            </div>
+          </li>
+          <hr />
+        <% end %>
+      </ul>
+      <hr>
+      <div class="center"><%= paginate @news, theme: "twitter-bootstrap-3" %></div>
+    </div>
+    <div class="col-md-3">
+      <%= render "categories/list_category", object: "new" %>
+    </div>
+  </div>
+</div>

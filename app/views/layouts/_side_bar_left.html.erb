@@ -1,0 +1,38 @@
+<ul class="left-side-bar nav sidebar-nav col-md-2 col-sm-3 col-xs-3" id = "admin-nav">
+  <li>
+    <%= link_to "" do %><i class="fa fa-dashboard fa-lg"></i> <%= t "dashboard" %><% end %>
+  </li>
+  <li>
+    <%= link_to  new_admin_user_path(locale: I18n.locale) do %><i class="fa fa-pencil"></i> Create User<% end %>
+  </li>
+  <li>
+    <%= link_to new_admin_home_path do %><i class="fa fa-pencil"></i> Change Slides <% end %>
+  </li>
+  <li>
+    <%= link_to new_admin_project_path(I18n.locale) do %><i class="fa fa-users fa-lg"></i> Create Project <% end %>
+  </li>
+  <li data-toggle="collapse" data-target="#products" class="collapsed active">
+    <a href="#"><i class="fa fa-gift fa-lg"></i> <%= t "manage.manage" %><span class="arrow"></span></a>
+  </li>
+  <ul class="sub-menu collapse" id="products">
+    <li class="active"><%= link_to t("all") %></li>
+    <li><%= link_to "" do %><%= t("header.menu.project") %><% end %></li>
+    <li><%= link_to "" do %><%= t("user") %><% end %></li>
+    <li><%= link_to t("header.menu.blog") %></li>
+    <li><%= link_to t("header.menu.new") %></li>
+    <li><%= link_to t("slide") %></li>
+    <li><%= link_to "Create Project", new_admin_project_path(I18n.locale) %></li>
+  </ul>
+  <li>
+    <%= link_to "" do %><i class="fa fa-user fa-lg"></i> <%= t "profile" %> <% end %>
+  </li>
+
+  <li>
+    <%= link_to "" do %><i class="fa fa-undo"></i> <%= t "back_home" %> <% end %>
+  </li>
+  <li>
+    <%= link_to destroy_user_session_path(locale: I18n.locale), method: :delete do %>
+      <i class="fa fa-repeat"></i> <%= t "log_out" %>
+    <% end %>
+  </li>
+</ul>

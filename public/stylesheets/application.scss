@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ *= require bootstrap-modal
+ *= require social-share-button
+ *= require growl
+ *= require animate
+ */
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'semantic-ui';
+@import 'simplemde.min';
+
+.bottom-30 {
+  margin-bottom: 30px !important;
+}
+
+.margin-bottom-50 {
+  margin-bottom: 50px !important;
+}
+
+.resize-slide {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.font-family {
+  font-family: serif !important;
+}
+
+.height-200-px {
+  height: 200px !important;
+}
+
+.padding-top-40 {
+  padding-top: 40px !important;
+}
+
+.height-100-px {
+  height: 100px;
+}
+
+.margin-minus-top {
+  margin-top: -80px !important;
+}
+
+.background-white {
+  background-color: white !important;
+}
+
+.resize-related-blog {
+  width: 330px;
+  height: 230px;
+}

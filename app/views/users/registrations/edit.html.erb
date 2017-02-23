@@ -1,0 +1,50 @@
+<section>
+  <div id="container_demo" >
+    <a class="hiddenanchor" id="toregister"></a>
+    <a class="hiddenanchor" id="tologin"></a>
+    <div id="wrapper">
+      <div id="login" class="animate form form_demo">
+        <%= form_for resource, as: resource_name, class: "omb_loginForm",
+          url: registration_path(resource_name),
+          html: { method: :put } do |f| %>
+          <%= devise_error_messages! %>
+          <h1><%= t "edit_user" %></h1>
+          <p>
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, required: "required",
+              class: "emailsignup", placeholder: (t "lg_field_email") %>
+          </p>
+          <p>
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true, required: "required",
+              class: "emailsignup", placeholder: (t "lg_field_email") %>
+          </p>
+          <p>
+            <%= f.label :name %>
+            <%= f.text_field :name, autofocus: true, required: "required",
+              class: "usernamesignup", placeholder: (t "rg_field_name") %>
+          </p>
+          <p>
+            <%= f.label :user_name %>
+            <%= f.text_field :user_name, autofocus: true, required: "required",
+              class: "usernamesignup", placeholder: (t "rg_field_tel") %>
+          </p>
+          <p>
+            <%= f.label :position %>
+            <%= f.text_field :position, autofocus: true, required: "required",
+              class: "usernamesignup", placeholder: (t "rg_field_address") %>
+          </p>
+          <p>
+          <p class="signin button">
+            <%= f.submit t(:edit_button) %>
+          </p>
+        <% end %>
+        <p class="change_link p_bot">
+          <%= link_to t(:edit_back), :back %>
+          <%= link_to t(:edit_cancel), registration_path(resource_name),
+            data: { confirm: t(:edit_sure) }, method: :delete %>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+<section id="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <h2><%= @blog.title %></h2>
+          <div class="disable-cancela">
+            <%= rating_for @blog, :rating, disable_after_rate: false, enable_half: true, cancel: false %>
+          </div>
+          <%= render partial: "shared/like_blog",  locals: {blog: @blog, like: @like} %>
+          <div class="post-meta text-uppercase">
+            <span><%= I18n.l @blog.created_at, format: t("format.datetime_create") %></span>
+            <span><%= t "in" %> <%= link_to @blog.category_name, blogs_path(category: @blog.category.id) %></span>
+            <span><%= t "by" %> <%= link_to @blog.user_name, "" %></span>
+          </div>
+          <button class="ui facebook button">
+            <i class="facebook icon"></i>
+            <%= t "facebook" %>
+          </button>
+          <button class="ui twitter button">
+            <i class="twitter icon"></i>
+            <%= t "twitter" %>
+          </button>
+          <button class="ui google plus button">
+            <i class="google plus icon"></i>
+            <%= t "google_plus" %>
+          </button>
+          <button class="ui vk button">
+            <i class="vk icon"></i>
+            <%= t "vk" %>
+          </button>
+          <button class="ui linkedin button">
+            <i class="linkedin icon"></i>
+            <%= t "linkedin" %>
+          </button>
+          <button class="ui instagram button">
+            <i class="instagram icon"></i>
+            <%= t "instagram" %>
+          </button>
+          <button class="ui youtube button">
+            <i class="youtube icon"></i>
+            <%= t "youtube" %>
+          </button>
+          <span class="st-border"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="blog" class="margin-bottom-50" style="background: white; padding-top: 100px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="single-blog">
+          <article>
+            <div class="post-article markdown">
+              <%= markdown @blog.content %>
+            </div>
+          </article>
+        </div>
+        <hr>
+        <br/ >
+      </div>
+      <div class="col-md-3">
+        <%= render "categories/list_category", object: "blog" %>
+      </div>
+    </div>
+    <h3><%= t "blog_relate" %></h3>
+    <%= render "related/related_post", object: "blog" %>
+  </div>
+</section>

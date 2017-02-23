@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <title><%= t("title_home") %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag "application", media: "all",
+      "data-turbolinks-track": true %>
+    <%= javascript_include_tag "application",
+      "data-turbolinks-track": true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render "layouts/header" %>
+    <div class="body_wrapper body_home framgia">
+      <%= render "shared/flash_message.js.erb" %>
+      <section id="login">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-wrap">
+              <h1><%= t "login" %></h1>
+              <%= form_for resource, as: resource_name,
+                url: session_path(resource_name, locale: I18n.locale),
+                html: {class: "form-signin"} do |f| %>
+              <div class="form-group">
+                <%= f.email_field :email, class: "form-control",
+                  id: "user_email", placeholder: "#{I18n.t "email"}" %>
+              </div>
+              <div class="form-group">
+                <%= f.password_field :password, class: "form-control",
+                  id: "user_password", placeholder: "#{I18n.t "password"}" %>
+              </div>
+              <% if devise_mapping.rememberable? -%>
+              <div class="checkbox">
+                <span>
+                  <%= f.label :remember_me, class: "pull-left" do %>
+                    <%= f.check_box :remember_me, class: "icheck pull-left" %>
+                    <span><%= t "remember_me" %></span>
+                  <% end %>
+                </span>
+                <span class="pull-right">
+                  <%= link_to t("forgot_password"), "#" %>
+                </span>
+              </div>
+              <% end -%>
+              <%= link_to "Back", root_path(locale: I18n.locale) %>
+              <%= f.submit t("sign_in"), class: "btn btn-custom btn-lg btn-block" %>
+              <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-custom
+                btn-lg btn-block btn-danger" do %>
+                <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                <%= t "login_twitter" %>
+              <% end %>
+
+              <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-custom btn-lg
+                btn-block btn-primary" do %>
+                <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                <%= t "login_facebook" %>
+              <% end %>
+            <% end %>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

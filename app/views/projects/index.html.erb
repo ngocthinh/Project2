@@ -1,0 +1,50 @@
+<div id="portfolio" class="bg-light-gray margin-top-150">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading"><%= t "portfolio" %></h2>
+        <h3 class="section-subheading text-muted">
+          <%= t "introduce.portfolio" %>
+        </h3>
+      </div>
+    </div>
+    <hr />
+    <%= search_form_for @q, id: "search_form" do |f| %>
+      <div class="col-md-12", id = "search-project" >
+        <div class="col-md-2">
+          <%= f.text_field :name_cont, placeholder: (t".search_project"),
+            id: "user_search", class: "form-control" %>
+        </div>
+        <div class="col-md-2">
+          <%= f.select :branch_eq,
+            options_for_select(Project::BRANCH), {include_blank: (t".all")},
+            {class: "form-control selectpicker", "data-live-search": true} %>
+        </div>
+        <div class="col-md-2">
+          <%= f.select :category_id_eq,
+            options_for_select(@categories.all.map{|c| [c.name, c.id]},
+            f.object.category_id),{include_blank: (t".all")} ,
+            {class: "form-control selectpicker", "data-live-search": true} %>
+        </div>
+        <div class="col-md-1">
+          <%= f.submit t("search_button"), class: "ui blue button" %>
+        </div>
+        <div class="col-md-5">
+        </div>
+      </div>
+    <% end %>
+    <hr />
+    <br />
+    <div class="row">
+      <div class="portfolio-wrapper" >
+        <div class="portfolio-items">
+          <%= render @projects %>
+        </div>
+      </div>
+    </div>
+    <div class="center">
+      <%= paginate @projects, theme: "twitter-bootstrap-3" %>
+    </div>
+  </div>
+</div>
+<div class="portfolio-show"></div>

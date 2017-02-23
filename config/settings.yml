@@ -1,0 +1,60 @@
+user:
+  name: 50
+project:
+  max_image_files: 5
+  item: 3
+  name_length: 50
+  url_length: 100
+  git_repository_length: 100
+  core_features_length: 100
+  description_length: 65555
+  realease_note_length: 100
+  server_information_length: 100
+  platform_length: 100
+  pm_url_length: 100
+contact:
+  name_length: 50
+  email_length: 30
+  title_length: 60
+per_page:
+  projects: 9
+  blog: 4
+  user: 16
+  blog: 2
+  comment: 4
+format:
+  image: ["jpg", "jpeg", "gif", "png"]
+  image_size: 0.5
+branch:
+  danang: "Đà Nẵng"
+  hanoi: "Hà Nội"
+description: 82
+limit_project: 6
+employees: 10000
+completed_project: 173
+client: 106
+cup_of_coffee: 297345
+description: 20
+mail_from: "fportfolio.info@gmail.com"
+contact_phone: "+84-4-3795-5417"
+contact_mail: "email@framgia.com"
+contact_domain: "www.framgia.com"
+link_map: "https://maps.googleapis.com/maps/api/js?key="
+public: "public"
+private: "private"
+related_item: 3
+truncate:
+  biography: 55
+languages: {en: "English", vi: "Tiếng Việt", ja: "日本語"}
+like: "like"
+message_notice: "notice"
+message_alert: "alert"
+message_danger: "danger"
+description_markdown: 100
+array_image:
+  second: 1
+  last: -1
+language:
+  vi: "vi"
+  ja: "ja"
+  en: "en"

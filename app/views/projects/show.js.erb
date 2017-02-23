@@ -1,0 +1,2 @@
+$('#entries').append("<%= j (render partial: @comments)%>");
+$('#load_more').replaceWith("<%= j (link_to_next_page(@comments, (t 'load_more'), remote: true, id: 'load_more', class: 'btn btn-primary'))%>")

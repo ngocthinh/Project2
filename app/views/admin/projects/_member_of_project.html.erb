@@ -1,0 +1,15 @@
+<% @support.participates.each do |participate| %>
+  <div class="col-md-3 margin-top-20">
+    <div class="left">
+      <%= link_to user_path(I18n.locale, participate) do %>
+        <%= image_tag participate.user.avatar.url,
+          class: "img-member-of-project" %>
+      <% end %>
+    </div>
+    <div class="left item-member-project">
+      <%= link_to "#{participate.user.name}", user_path(I18n.locale, participate),
+        title: "#{participate.user.name}" %><br/>
+      <span><%= participate.position %></span>
+    </div>
+  </div>
+<% end %>

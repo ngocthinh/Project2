@@ -1,0 +1,14 @@
+<div class="sidebar-widget">
+  <h4 class="sidebar-title"><%= t "categories" %></h4>
+  <ul>
+    <% @categories.each do |category| %>
+      <li>
+        <% if object == "blog" %>
+          <%= link_to category.name, blogs_path(I18n.locale, category: category.id) %>
+        <% else %>
+          <%= link_to category.name, news_index_path(I18n.locale, category: category.id) %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

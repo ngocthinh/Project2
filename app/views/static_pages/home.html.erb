@@ -1,0 +1,210 @@
+<section id="slider">
+  <div id="home-carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= image_tag @home.images.first.image.url, class: "resize-slide" %>
+        <div class="carousel-caption container">
+          <div class="row">
+            <div class="col-sm-7">
+              <h2 id = "home-title"><%= @home.title %></h2>
+              <h3 id = "home-sologan"><%= @home.sologan %></h3>
+              <p id = "home-description"><%= @home.description %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% @home.images[Settings.array_image.second..Settings.array_image.last]
+        .each do |image, i| %>
+        <div class="item">
+          <%= image_tag image.image.url, class: "resize-slide" %>
+          <div class="carousel-caption container">
+            <div class="row">
+              <div class="col-sm-7">
+                <h2 id = "home-title"><%= @home.title %></h2>
+                <h3 id= "home-sologan"><%= @home.sologan %></h3>
+                <p id = "home-description"><%= @home.description %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <a class="home-carousel-left" href="#home-carousel" data-slide="prev">
+        <i class="fa fa-angle-left"></i>
+      </a>
+      <a class="home-carousel-right" href="#home-carousel" data-slide="next">
+        <i class="fa fa-angle-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+<section id="our-works">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <h1 class="font-family"><%= t "manage.our_project" %></h1>
+          <span class="st-border"></span>
+        </div>
+      </div>
+      <div class="portfolio-wrapper" >
+        <div class="portfolio-items">
+        <%= render "list_project" %>
+        </div>
+      </div>
+    </div>
+    <%= link_to t("read_more"), projects_path, class: "btn btn-send margin-45" %>
+  </div>
+</section>
+<section id="about-us">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="about-us text-center">
+          <h4><%= t "question.title_1" %><br/><%= t "question.title_2" %></h4>
+          <p>
+            <%= t "question.description" %>
+          </p>
+          <hr />
+        </div>
+      </div>
+      <div class="col-sm-6 our-office">
+        <div id="office-carousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="item active resize-culture">
+              <%= image_tag "/assets/cultural/vanhoa-2.jpg" %>
+            </div>
+            <div class="item resize-culture">
+              <%= image_tag "/assets/cultural/vanhoa-2.jpg" %>
+            </div>
+            <div class="item resize-culture">
+              <%= image_tag "/assets/cultural/vanhoa-2.jpg" %>
+            </div>
+            <div class="item resize-culture">
+              <%= image_tag "/assets/cultural/vanhoa-2.jpg" %>
+            </div>
+            <div class="item resize-culture">
+              <%= image_tag "/assets/cultural/vanhoa-2.jpg" %>
+            </div>
+            <a class="office-carousel-left" href="#office-carousel" data-slide="prev">
+              <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="office-carousel-right" href="#office-carousel" data-slide="next">
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="introduce-team">
+  <div class="container">
+    <div class="row">
+      <div class="overlay"></div>
+      <div class="col-md-8 col-md-offset-2 col-sm-12">
+        <div class="st-introduce-teams">
+          <div id="fade-quote-carousel" class="carousel slide owl-wrapper" data-ride="carousel" data-interval="3000">
+            <ol class="carousel-indicators">
+              <li data-target="#fade-quote-carousel" data-slide-to="0"></li>
+              <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
+              <li data-target="#fade-quote-carousel" data-slide-to="2" class="active"></li>
+              <li data-target="#fade-quote-carousel" data-slide-to="3"></li>
+              <li data-target="#fade-quote-carousel" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="active item">
+                <div class="profile-circle left member1"></div>
+                <blockquote>
+                  <p><%= t "list_team.speak1" %></p>
+                <div class="st-border"></div>
+                <div class="client-info">
+                  <h5><%= t "list_team.member1" %></h5>
+                  <span><%= t "position.manage" %></span>
+                </div>
+                </blockquote>
+                <div class="clear"></div>
+              </div>
+              <div class="item">
+                <div class="profile-circle left member2"></div>
+                <blockquote>
+                  <p><%= t "list_team.speak1" %></p>
+                <div class="st-border"></div>
+                <div class="client-info">
+                  <h5><%= t "list_team.member2" %></h5>
+                  <span><%= t "position.manage" %></span>
+                </div>
+                </blockquote>
+              </div>
+              <div class="item">
+                <div class="profile-circle left member2"></div>
+                <blockquote>
+                  <p><%= t "list_team.speak1" %></p>
+                <div class="st-border"></div>
+                <div class="client-info">
+                  <h5><%= t "list_team.member3" %></h5>
+                  <span><%= t "position.dev" %></span>
+                </div>
+                </blockquote>
+              </div>
+              <div class="item">
+                <div class="profile-circle left member2"></div>
+                <blockquote>
+                  <p><%= t "list_team.speak1" %></p>
+                <div class="st-border"></div>
+                <div class="client-info">
+                  <h5><%= t "list_team.member4" %></h5>
+                  <span><%= t "position.dev" %></span>
+                </div>
+                </blockquote>
+              </div>
+              <div class="item">
+                <div class="profile-circle left member2"></div>
+                <blockquote>
+                  <p><%= t "list_team.speak1" %></p>
+                <div class="st-border"></div>
+                <div class="client-info">
+                  <h5><%= t "list_team.member5" %></h5>
+                  <span><%= t "position.dev" %></span>
+                </div>
+                </blockquote>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="fun-facts">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <div class="fun-fact text-center">
+          <h3>
+            <i class="fa fa-thumbs-o-up"></i>
+            <span class="st-counter"><%= User.count %></span>
+          </h3>
+          <p><%= t "employee" %></p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="fun-fact text-center">
+          <h3><i class="fa fa-briefcase fa-6"></i> <span class="st-counter"><%= Project.count %></span></h3>
+          <p><%= t "complete_project" %></p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="fun-fact text-center">
+          <h3><i class="fa fa-code"></i> <span class="st-counter"><%= Post.news.count %></span></h3>
+          <p><%= t "news" %></p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="fun-fact text-center">
+          <h3><i class="fa fa-coffee"></i> <span class="st-counter"><%= Post.blog.count %></span></h3>
+          <p><%= t "blogs.name" %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<%= render "contacts/contact" %>

@@ -1,0 +1,76 @@
+.widget-title {
+  color: #252525;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.k2t_widget_member ul li {
+    display: inline-block;
+    width: 95%;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.k2t_widget_member ul li .member-thumb {
+  float: left;
+  margin-right: -8px;
+}
+
+.k2t_widget_member ul li h4 {
+  font-size: 128.5%;
+  font-weight: 500;
+  margin: 5px 0;
+}
+
+.k2t_widget_member ul li .position {
+  font-style: italic;
+  font-size: 115%;
+  color: #636363;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+.k2t_widget_member ul li .member-thumb img {
+  border-radius: 50%;
+}
+
+.name-of-member-project {
+  text-decoration: none !important;
+  font-weight: bold;
+  transition: all .3s ease-in-out;
+  padding-left: 32px;
+  font-size: 14px;
+}
+
+.name-of-member-project:hover {
+  color: #3f51b5;
+}
+
+.width-333 {
+  width: 333px;
+}
+
+.scroll {
+  overflow-y: scroll;
+
+}
+
+.img-member {
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+}
+
+.img-project {
+  margin: 0 auto;
+  width: 845px;
+  height: 476px !important;
+}
+
+#admin-nav {
+  position: fixed;
+}
+
+#admin-site {
+  margin-left: 15.5%;
+}

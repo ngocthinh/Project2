@@ -1,0 +1,18 @@
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-push-6 footer-social-icons">
+        <span><%= t "footer.follow_us" %>:</span>
+        <%= link_to "https://www.facebook.com/FramgiaVietnam/", target: "blank" do %>
+          <i class="fa fa-facebook"></i>
+        <% end %>
+        <%= link_to root_path do %><i class="fa fa-twitter"></i><% end %>
+        <%= link_to root_path do %><i class="fa fa-google-plus"></i><% end %>
+        <%= link_to root_path do %><i class="fa fa-pinterest-p"></i><% end %>
+      </div>
+      <div class="col-sm-6 col-sm-pull-6 copyright">
+        <p><%= t "footer.company-name" %></p>
+      </div>
+    </div>
+  </div>
+</footer>

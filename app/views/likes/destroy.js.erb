@@ -1,0 +1,2 @@
+$('#like-unlike-form-div-<%= @project.id %>').html('<%= j (render "shared/like", project: @project) %>')
+$('#like-count-<%= @project.id %>').html('<%= @project.likes.count %>')

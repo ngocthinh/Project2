@@ -1,0 +1,18 @@
+<div class="notification checked-<%= notification.checked %> border-bottom" >
+  <div>
+    <div class="left img-noti">
+      <%= image_tag notification.user_create.avatar.url, class: "img-circle resize-img-noti" %>
+    </div>
+    <div class="left message-noti">
+      <%= notification.user_create.name %>
+      <%= notification.notice_type %>
+      <%= link_to notification.notificationable.title,
+        blog_path(id: notification.notificationable.id,
+        notification_id: notification.id), class: "margin-0" %>
+    </div>
+    <div class="clear"></div>
+    <span class="time-ago">
+      <%= time_ago_in_words(notification.created_at) %>
+    </span>
+  </div>
+</div>

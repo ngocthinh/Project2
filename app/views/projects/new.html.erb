@@ -1,0 +1,93 @@
+<%= form_for @project, html: {class: "form-horizontal form-project-new"} do |f| %>
+  <%= render "shared/error_messages", object: @project %>
+  <fieldset>
+    <div class="form-group">
+      <%= f.label :name, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_field :name, class: "form-control input-md",
+          placeholder: true, required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :url, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.url_field :url, class: "form-control input-md",
+          placeholder: true, required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :core_features, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_field :core_features, class: "form-control input-md",
+          placeholder: true, required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :platform, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_field :platform, class: "form-control input-md",
+          placeholder: true, required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+    </div>
+
+    <% Project::PRIVATE_ATTRIBUTES.each do |key, value| %>
+      <div class="form-group">
+        <%= f.label key, class: "col-md-4 control-label" %>
+        <div class="col-md-4">
+          <%= f.text_field key, class: "form-control input-md",
+            placeholder: true, required: true %>
+          <%= radio_button_tag key, Settings.public %>
+          <%= t "public" %>
+          <%= radio_button_tag key, Settings.private, checked: true %>
+          <%= t "private" %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :realease_note, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.text_field :realease_note, class: "form-control input-md",
+         placeholder: true, required: true %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :category, class: "col-md-4 control-label" %>
+      <div class="col-md-4">
+        <%= f.select :category_id, options_for_select(@categories.all.map{|c| [c.name, c.id]},
+          f.object.category_id), {},
+          {class: "form-control selectpicker", "data-live-search": true} %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :images, class: "col-md-4 control-label"%>
+      <div class="col-md-4">
+        <table class="user-photo-form">
+          <%= f.fields_for :images do |image| %>
+            <%= render "image_fields", f: image %>
+          <% end %>
+          <%= link_to_add_association (t "add_a_photo"), f, :images, class: "btn btn-default" %>
+        </table>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="save"></label>
+      <div class="col-md-8">
+        <%= f.submit t(".save") , class: "btn btn-primary" %>
+        <%= button_tag t(".reset"), type: :reset, class: "btn btn-inverse"%>
+      </div>
+    </div>
+  </fieldset>
+<% end %>

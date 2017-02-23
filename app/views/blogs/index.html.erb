@@ -1,0 +1,66 @@
+<section id="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <div>
+            <div class="left">
+              <h1><%= t "header.menu.blog" %></h1>
+              <span class="st-border"></span>
+            </div>
+            <div class="right">
+              <%= link_to new_blog_path(I18n.locale) , class: "ui primary basic button" do %>
+                <i class="fa fa-pencil"> <%= t "write_blog" %></i>
+              <% end %>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <% @blogs.each do |blog| %>
+          <div class="single-blog">
+            <article>
+              <div class="post-thumb">
+                <%= image_tag blog.image.url, class: "img-responsive resize-blog" %>
+              </div>
+              <h4 class="post-title"><%= link_to blog.title, "" %></h4>
+              <div class="post-meta text-uppercase">
+                <span><%= I18n.l blog.created_at, format: t("format.datetime_create") %></span>
+                <span><%= t "in" %> <%= link_to blog.category_name, blogs_path(category: blog.category.id) %></span>
+                <span><%= t "by" %> <%= link_to blog.user_name, user_path(I18n.locale, blog.user) %></span>
+              </div>
+              <div class="post-article markdown">
+                <%= markdown blog.content.truncate(Settings.description_markdown) %>...
+              </div>
+              <%= link_to t("read_more"), blog_path(I18n.locale, blog), class: "btn btn-readmore" %>
+            </article>
+          </div>
+        <% end %>
+        <hr>
+        
+      </div>
+      <div class="col-md-3">
+        <div class="sidebar-widget">
+          <div class="blog-search">
+            <form>
+                <input type="text" name="search">
+                <span>
+                  <button id="submit_btn" class="search-submit" type="submit">
+                    <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </form>
+          </div>
+        </div>
+        <%= render "categories/list_category", object: "blog" %>
+      </div>
+    </div>
+  </div>
+</section>

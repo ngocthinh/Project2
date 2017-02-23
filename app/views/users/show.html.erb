@@ -1,0 +1,123 @@
+<div class="container margin-top-2">
+  <div class="row margin-top-100">
+    <div class="col-lg-3 col-md-4 col-sm-4 card margin-left-25">
+      <div class="main-box clearfix">
+        <div class="main-box-body clearfix">
+          <%= image_tag @user.avatar.url, class: "profile-img img-responsive
+            center-block img-profile-user" %>
+          <header class="main-box-header clearfix text-center">
+            <h3><%= @user.name %></h3>
+          </header>
+
+          <div class="profile-stars center">
+            <i class="fa fa-star" style="color: #eeee77"></i>
+            <i class="fa fa-star" style="color: #eeee77"></i>
+            <i class="fa fa-star" style="color: #eeee77"></i>
+            <i class="fa fa-star" style="color: #eeee77"></i>
+            <i class="fa fa-star-o" style="color: #eeee77"></i>
+          </div>
+          <div class="profile-since center">
+            <%= t "date_member_join" %>: <%= I18n.l @user.created_at,
+              format: t("format.datetime_create")  %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8 col-md-7 col-sm-7 card margin-left-25">
+      <div class="mywork-reg">
+        <div class="mywork-form-reg main-detail-job">
+          <div class="company-info">
+            <div class="">
+              <div class="col-md-6">
+                <h1 class="comp-name"><%= t "profile" %></h1>
+              </div>
+              <div class="col-md-6">
+                <%= link_to edit_user_path(I18n.locale, current_user),
+                  class: "circular ui blue icon button float-right" do %>
+                    <%= t "menu_edit_profile" %>
+                    <i class="icon settings"></i>
+                <% end %>
+              </div>
+              <div class="boxcontact-copmpany">
+                <table class="ui very basic collapsing celled table width-100">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <strong><%= t "name" %>:</strong>
+                      </td>
+                      <td>
+                        <%= @user.name %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong><%= t "email" %>:</strong>
+                      </td>
+                      <td>
+                        <%= @user.email %>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong><%= t "user_name" %>:</strong>
+                      </td>
+                      <td>
+                        <p><%= @user.user_name %></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong><%= t "phone-user" %>:</strong>
+                      </td>
+                      <td>
+                        <p><%= @user.phone %></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="block_info contentdef margin-right-15">
+              <div class="info_job col-md-12">
+                <li class="home-col12 col-md-4">
+                  <h4 class="height-15"><%= t "experience" %></h4>
+                  <p></p>
+                </li>
+                <li class="home-col12 col-md-4">
+                  <h4 class="height-15"><%= t "rank" %></h4>
+                  <p>
+                      <%= @user.position %>
+                  </p>
+                </li>
+                <li class="col-md-4 home-col12">
+                  <h4 class="height-15"><%= t "header.menu.blog" %></h4>
+                  <p><%= @user.posts.blog.count %></p>
+                </li>
+                <li class="col-md-4 home-col123">
+                  <h4 class="height-15"><%= t "header.menu.project" %></h4>
+                  <p><%= @user.projects.count %></p>
+                </li>
+              </div>
+              <div class="desjob-company">
+                <header class="header-block-line">
+                  <h4 class="title"><%= t "biography" %></h4>
+                </header>
+                <%= @user.biography %>
+              </div>
+              <div class="desjob-company">
+                <%= render "certificate_of_user", object: @certificate_users %>
+              </div>
+              <div class="desjob-company">
+                 <%= render "technical_of_user", object: @techniques %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br />
+  <%= render "blogs/blogs_of_user", user: @user %>
+  <div class="margin-bottom-50"></div>
+</div>

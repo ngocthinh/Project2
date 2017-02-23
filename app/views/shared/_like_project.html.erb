@@ -1,0 +1,14 @@
+<div class="like-unlike-form-div" id="like-unlike-form-div-<%= project.id %>">
+  <% if @like.present? %>
+    <%= render "shared/unlike", project: project %>
+  <% else %>
+    <%= render "shared/like", project: project %>
+  <% end %>
+</div>
+</br>
+<div class="like-count-div">
+  <span class="like-count" id="like-count-<%= project.id %>"> 
+    <%= project.likes.count %>
+  </span>
+  <%= t "liked" %>
+</div>

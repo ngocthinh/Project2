@@ -1,0 +1,33 @@
+<div class="container ">
+  <% if @users.present? %>
+    <% if @project %>
+      <%= search_form_for @t, url: project_participates_path(I18n.locale, @project),
+       id: "search_form", class: " margin-top-null" do |f| %>
+        <div class="ui input icon search-form">
+          <%= f.search_field :name_or_email_cont, placeholder: "Find by name or email",
+            id: "user_search" %>
+        </div>
+        <%= f.submit (t "search_button"), class: "ui blue button" %>
+      <% end %>
+      <div class="ui link cards" id= "users-<%= @project.id %>">
+    <% else %>
+      <%= search_form_for @q, id: "search_form" do |f| %>
+        <div class="ui input icon search-form">
+          <%= f.search_field :name_or_email_cont, placeholder: "Find by name or email",
+            id: "user_search" %>
+        </div>
+        <%= f.submit (t "search_button"), class: "ui blue button" %>
+      <% end %>
+      <div class="ui link cards" id= "users">
+    <% end %>
+      <%= render @users %>
+    </div>
+
+    <center>
+      <%= link_to_next_page @users, (t "load_more"), remote: true, id: "load_more",
+        class: "btn btn-primary" %>
+    </center>
+  <% else %>
+    <p><%= t ".no_user_found" %> <%= params[:search] %>.</p>
+  <% end %>
+</div>

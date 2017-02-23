@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".comment-from #content").keypress(function(o){13==o.which&&($(this).closest("form").submit(),$(".modal-body").stop().animate({scrollTop:$(".modal-body")[0].scrollHeight},800))})});

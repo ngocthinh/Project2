@@ -1,0 +1,17 @@
+<% @projects.each do |project| %>
+  <div class="col-md-4 col-sm-6">
+    <div class="portfolio-content">
+      <%= image_tag project.images.first.image.url, class: "img-responsive resize-project"%>
+      <div class="portfolio-overlay">
+        <%= link_to project_path(I18n.locale, project) do %>
+          <i class="fa fa-camera-retro"></i>
+        <% end %>
+        <h5><%= project.name %></h5>
+        <p><%= project.description.truncate(Settings.description) %></p>
+        <div class="rate-project">    
+          <%= rating_for project, :rating, disable_after_rate: false, enable_half: true, cancel: false %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

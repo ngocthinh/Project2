@@ -1,0 +1,352 @@
+vi:
+  search_button: "Tìm kiếm"
+  succeed: "Thành công"
+  remove: "Xóa"
+  dictionary:
+  too_long: &too_long " quá dài"
+  blank: &blank " không được trống"
+  project_not_found: "Dự án không tồn tại"
+  user_not_found: "Người dùng không tồn tại"
+  available: "Thành Viên này đã có trong dự án của bạn ! "
+  log_out: "Đăng xuất"
+  social_login: "Đăng nhập qua tài khoản Mạng Xã Hội"
+  login_twitter: "Đăng nhập qua Twitter"
+  login_facebook: "Đăng nhập qua Facebook"
+  sign_up: "Đăng ký"
+  user: "Người dùng"
+  user_name: "User name"
+  email: "Email "
+  user_position: "Vị Trí"
+  password: "Mật khẩu *"
+  password_confirmation: "nhập lại password *"
+  agree_account: "đồng ý tạo tài khoản "
+  terms_privacy: "Điều khoản & Bảo mật"
+  sign_in: "Đăng nhập"
+  show: "hiện"
+  load_more: "Xem thêm"
+  lg_field_email: "nguyenvana@gmail.com"
+  lg_field_pass: "12345678"
+  lg_field_name: "Nguyễn Văn A"
+  rg_field_username: "nguyen.van.a"
+  rg_field_position: "Ruby on Rails"
+  menu_sign_in: "Đăng nhập"
+  menu_sign_up: "Đăng ký"
+  menu_edit_profile: "Chỉnh sửa"
+  menu_sign_out: "Đăng xuất"
+  title_home: "Danh mục đầu tư"
+  about_us: "Đội ngũ phát triển"
+  close: "Đóng"
+  login: "Đăng nhập"
+  read_more: "Xem thêm"
+  liked: "Thích"
+  errors: "Lỗi"
+  message: "Lời Nhắn"
+  contact_us: "Liên hệ với chúng tôi"
+  contact_detail: "Được thành lập từ năm 2012 tại Hà Nội, Framgia Việt Nam là công ty IT Nhật Bản hoạt động trong lĩnh vực thiết kế, phát triển ứng dụng, games chạy trên nền tảng smartphone, nền tảng mạng xã hội, sản xuất và phát triển ứng dụng website."
+  contact_address: "6F, Vinh Trung Plaza, 255~257 Hung Vuong Str., Vinh Trung ward, Thanh Khe district, Da Nang"
+  contact_cofirmation: "Xác nhận liên hệ"
+  send_message: "Gửi tin nhắn"
+  dear: "Chào"
+  chat_box: "Hộp Thoại"
+  send_mail_feedback: "Cảm ơn bạn đã liên hệ với dịch vụ khách hàng Web.cc. Chúng tôi đã nhận được email của bạn và đội ngũ dịch vụ khách hàng của chúng tôi sẽ được trả lời các bạn sớm."
+  comment_name: "Tên của bạn"
+  comment_content: "Nội dung bình luận"
+  notification: "Thông báo"
+  like_button: "Thích"
+  create_account: "Tạo tài khoản"
+  create_project: "Tạo dự án"
+  edit_home: "Thiết kế trang chủ website"
+  save: "Xác nhận lưu"
+  cancel: "Hủy bỏ"
+  admin:
+    projects:
+      remove: "Xóa"
+      label: "Dự án"
+      created: " Tạo dự án thành công ."
+      create_failed: "Tạo dự án thất bại ."
+      check_max_files: "Dự án chỉ bao gồm không quá 5 ảnh và ít nhất 1 ảnh."
+      add_member: "Thêm Thành Viên"
+      new:
+        add_a_photo: "Thêm ảnh"
+        save: "Tạo dự án"
+        reset: "Làm mới"
+      edit:
+        save: "Xác nhận lưu"
+        cancel: "Hủy bỏ"
+      index:
+        search_project: "Tìm kiếm dự án"
+        all: "Tất cả"
+  contacts:
+    create:
+      success: "Cảm ơn bạn đã liên lạc với chúng tôi, vui lòng đợi nhóm dịch vụ khách hàng sẽ phản hồi với bạn sớm."
+      fail: "Rất tiếc! Đã xảy ra lỗi khi xử lý yêu cầu này, bạn cần gửi tin nhắn một lần nữa!"
+  comment: "vừa bình luận"
+  send: "Gửi"
+  projects: "Dự Án "
+  joined_in: "Tham gia từ"
+  member: "Thành Viên"
+  header:
+    menu:
+      home: "Trang chủ"
+      project: "Dự án"
+      new: "Thông báo"
+      blog: "Bài viết"
+      idea: "Đề xuất ý tưởng"
+      contact: "Liên hệ"
+      about_team: "Chúng tôi"
+  footer:
+    menu:
+      home: "Trang chủ |"
+      blog: "Bài viết |"
+      about: "About |"
+      faq: "Faq |"
+      contact: "Liên hệ |"
+    company-name: "Copyright 2016 Framgia, Inc. All rights reserved."
+    address: "Tầng 6 tòa nhà Big C, Đà Nẵng, Việt Nam"
+    phone: "84-4-3795-5417"
+    email: "hr_team@framgia.com"
+    introduce: "About Framgia Viet Nam"
+    description: "Framgia Việt Nam là công ty IT Nhật Bản hoạt động trong lĩnh
+    vực thiết kế, phát triển ứng dụng, games chạy trên nền tảng smartphone,
+    nền tảng mạng xã hội, sản xuất và phát triển ứng dụng website."
+    follow_us: "Theo dõi chúng tôi"
+  shared:
+    error_messages:
+      error: "lỗi"
+  social:
+    facebook: "https://www.facebook.com/FramgiaVietnam"
+    github: "https://github.com/framgia/"
+    link: "https://www.linkedin.com/company/3341218?trk=tyah&amp;
+      trkInfo=clickedVertical%3Acompany%2CclickedEntityId%
+      3A3341218%2Cidx%3A2-1-2%2CtarId%3A1465497556522%2Ctas%3Aframgia%20vietnam"
+  images:
+    create_failed: "Vui lòng chỉ chọn file ảnh"
+  manage:
+    manage_project: "Quản lý project"
+    our_project: "Dự án của chúng tôi"
+    manage: "Quản lý chung"
+    character:
+      first: "Với điểm riêng."
+      second: "Tạo phần mềm chuyên nghiệp."
+  list_team:
+    member1: "Hoàng Nhạc Trung"
+    member2: "Nguyễn Văn Trần Anh"
+    member3: "Nguyễn Phước Tiên"
+    member4: "Nguyễn Ngọc Thịnh"
+    member5: "Kỳ Hữu Hải"
+    speak1: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Amet dolore nesciunt natus ullam possimus quas obcaecati suscipit voluptate facilis cum"
+  position:
+    manage: "Quản lý"
+    dev: "Nhà phát triển"
+  projects:
+    remove: "Xóa"
+    label: "Dự án"
+    created: " Tạo dự án thành công ."
+    create_failed: "Tạo dự án thất bại ."
+    check_max_files: "Dự án chỉ bao gồm không quá 5 ảnh và ít nhất 1 ảnh."
+    add_member: "Thêm Thành Viên"
+    new:
+      add_a_photo: "Thêm ảnh"
+      save: "Tạo dự án"
+      reset: "Làm mới"
+    edit:
+      save: "Xác nhận lưu"
+      cancel: "Hủy bỏ"
+    index:
+      search_project: "Tìm kiếm dự án"
+      all: "Tất cả"
+  users:
+    label_position: "Vị trí của họ trong project "
+    about_you: "Một số thông tin về người này"
+    add_member: "Thêm Thành Viên"
+    label: "Tìm thành viên cho dự án của bạn."
+    like: "Thích: 203"
+    rate: "Đánh giá: 303"
+    skill: "Ruby on Rails , Java, Scrum"
+    cetificate: "Toeic 250"
+    biography: "Tiểu Sử :"
+    created: " Tạo thành Viên thành công ."
+    create_failed: "Tạo thành Viên thất bại ."
+    new:
+      save: "Tạo"
+    index:
+      search: "Tìm kiếm"
+      search_user: "Tìm kiếm thành viên"
+      no_user_found: "Không tìm thấy bắt cứ thành viên nào có kì tự "
+    edit:
+      save: "Xác nhận lưu"
+      cancel: "Hủy bỏ"
+  participates:
+    created: "Thêm thành viên thành công."
+    create_failed: "Thêm thành viên thất bại ."
+  helper:
+    placeholder:
+      project:
+        name: "Tên"
+        url : "URL"
+        core_features: "Tính Năng Nổi Bật"
+        platform: "Nền Tảng"
+        server_information: "Server Thông Tin"
+        git_repository: "Git Repository"
+        realease_note: "Phiên Bản Hiện Tại"
+      messages:
+        content : "Nhập tin nhắn"
+  introduce:
+    portfolio: "Chúng tôi rất vinh dự khi có cơ hội hợp tác với các công ty
+      hàng đầu, những đơn vị đã và đang đóng góp các giá trị to lớn trong ngành
+      công nghiệp của họ. Danh sách các dự án của chúng tôi mô tả chi tiết những
+      dự án nổi bật đã hoàn thành. Chúng tôi luôn luôn chú trọng vào việc không
+      ngừng cải tiến, thay đổi phạm vi linh hoạt, nội lực của nhóm, và bàn giao
+      các sản phẩm chất lượng."
+  participate:
+    description: "Vị Trí"
+    available: "Thành Viên không tồn tại !"
+  portfolio: "Các dự án"
+  feature_project: "ĐẶC ĐIỂM DỰ ÁN"
+  member_of_project: "Thành viên của dự án"
+  close: "Đóng"
+  join_project: "Tham gia"
+  server_informations: "Thông tin máy chủ"
+  core_features: "Công nghệ và framework"
+  record_isnt_exist: "Không tìm thấy thao tác này"
+  messages:
+    message:
+      chat_time: "%H:%M"
+  errors:
+    messages:
+      required: "Phải tồn tại"
+      taken: "Đã tồn tại"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "Lỗi: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "Không thể xóa bản ghi này vì có phụ thuộc  %{record} "
+          has_many: "Không thể xóa bản ghi này vì có các phụ thuộc  %{record} "
+      models:
+        user:
+          attributes:
+            email:
+              blank: *blank
+            password:
+              blank: *blank
+            name:
+              blank: *blank
+        contact:
+          attributes:
+            email:
+              blank: *blank
+            title:
+              blank: *blank
+            name:
+              blank: *blank
+        project:
+          attributes:
+            name:
+              too_long: *too_long
+              blank: *blank
+            url:
+              too_long: *too_long
+              blank: *blank
+            realease_note:
+              too_long: *too_long
+              blank: *blank
+            git_repository:
+              too_long: *too_long
+              blank: *blank
+            server_information:
+              too_long: *too_long
+              blank: *blank
+            platform:
+              too_long: *too_long
+              blank: *blank
+            core_features:
+              too_long: *too_long
+              blank: *blank
+            pm_url:
+              too_long: *too_long
+              blank: *blank
+  sologan:
+    first: "Đến với chúng tôi"
+    second: "Framgia"
+  employee: "Nhân viên"
+  complete_project: "Dự án hoàn thành"
+  client: "Khách hàng"
+  cup_of_coffee: "Tách cafe"
+  question:
+    title: "ARE YOU READY TO"
+    title_2: "MAKE IT AWESOME WITH US?"
+    description: "''Framgia'' không phải là từ dành riêng dùng để chỉ văn phòng nơi
+    các bạn làm việc, cũng không phải chỉ những quy định, thể chế , càng không phải
+    chỉ tư cách pháp nhân hay vốn điều lệ của công ty. ''Framgia'' chính là từ dùng để
+    chỉ từng cá nhân trong số các bạn, văn hóa của Framgia chính là do các bạn mà ra.
+    Chúng ta hãy kết nối thật nhiều những người bạn đồng hành, cùng tạo ra thật nhiều
+    giá trị ''awesome'' hơn nữa! "
+  member: "Thành viên"
+  in: "Trong"
+  by: "Đăng bởi"
+  facebook: "Facebook"
+  twitter: "Twitter"
+  google_plus: "Google Plus"
+  vk: "VK"
+  linkedin: "linkedIn"
+  instagram: "instagram"
+  youtube: "YouTube"
+  like: "Thích"
+  views:
+    pagination:
+      previous: "<"
+      first: "<<"
+      next: ">"
+      last: ">>"
+  format:
+    datetime_create: "%m, %d %Y"
+  categories: "Thể loại"
+  news: "Tin Tức"
+  format:
+    datetime_create: "%m, %d %Y"
+  view:
+    blog: "Xem bài viết"
+    new: "Xem tin tức"
+  comments: "Bình luận"
+  edit_project: "Chỉnh sửa dự án"
+  delete_project: "Xóa dự án này"
+  add_member_project: "Thêm thành viên vào dự án"
+  certification: "Chứng chỉ"
+  certifications: "Các chứng chỉ"
+  biography: "Tiểu sử"
+  techniques: "Các kỹ năng, kỹ thuật chuyên môn"
+  blog_of_user: "Bài viết "
+  experience: "Kinh nghiệm"
+  rank: "Cấp bậc"
+  send_message: "Gởi tin nhắn"
+  date_member_join: "Ngày tham gia"
+  profile: "Hồ sơ"
+  name: "Họ tên"
+  phone-user: "Số điện thoại"
+  online: "Đang hoạt động"
+  datetime:
+    distance_in_words:
+      x_minutes:
+        one: "1 phút trước"
+        other: "%{count} phút trước"
+      less_than_x_minutes: "ít hơn một phút"
+      about_x_hours: "%{count} giờ trước"
+      x_days:
+        one: "1 ngày trước"
+        other: "%{count} ngày trước"
+  notifications: "Các thông báo"
+  view_all: "Xem tất cả"
+  back_home: "Trở lại trang chủ"
+  write_blog: "Viết bài viết"
+  write_new: "Viết tin tức"
+  slide: "Slide"
+  admin:
+    home: "Trang chủ quản lý"
+  blogs:
+    name: "Bài viết"
+    created: " Tạo bài viết thành công ."
+    create_failed: "Tạo bài viết thất bại ."
+  title: "Tiêu đề"
+  blogs-home: "Bài viết"

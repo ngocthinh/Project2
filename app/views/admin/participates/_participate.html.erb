@@ -1,0 +1,93 @@
+<div class="card custom-card margin-top-20" id= "user<%= participate.user.id %>">
+  <%= link_to (t "remove"), project_participate_path(I18n.locale, @project, participate),
+    remote: true, method: :delete, class: "btn btn-primary" %>
+
+  <div class="image">
+    <%= image_tag participate.user.avatar.url, class: "user-index-avatar",
+      data: {toggle: "modal", target: "#user_modal#{participate.user.id}"} %>
+  </div>
+
+  <div class="content">
+    <div class="header">
+      <%= link_to participate.user.name, user_path(I18n.locale, participate.user) %>
+    </div>
+    <div class="meta">
+      <%= participate.user.position %>
+    </div>
+    <% if participate.user.biography.presence %>
+      <div class="description">
+        <%= participate.user.biography.truncate(Settings.truncate.biography) %>
+      </div>
+    <% end %>
+  </div>
+  <div class="extra content">
+    <span class="right floated">
+      <%= t "joined_in" %> <%= participate.user.created_at.year %>
+    </span>
+    <span>
+      <i class="user icon"></i>
+      <%= participate.user.projects.size %> <%= t ".projects" %>
+    </span>
+  </div>
+</div>
+
+<div class="modal member-modal-width fade" id="user_modal<%= participate.user.id %>" tabindex="-1" role="dialog",
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+        <h4 class="modal-title" id="myModalLabel"><%= t "users.about_you" %></h4>
+      </div>
+      <div class="modal-body">
+        <center>
+          <%= image_tag participate.user.avatar.url, class: "image-modal img-circle" %>
+          <h1 class="media-heading"><%= participate.user.name %></h1>
+          <h2 class="media-heading"><%= participate.user.position %></h2>
+          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+          <span class="glyphicon glyphicon-star" style="color:#f4b942"></span>
+        </center>
+        <div class="row clearfix">
+          <div class="table-responsive">
+            <table class="table user-table text-left">
+              <tr >
+                <td class="first"><h4>
+                  <span class="glyphicon glyphicon-thumbs-up" style="color:#f4b942">
+                  </span><%= t "users.like" %></h4>
+                </td>
+                <td class="first"><h4>
+                  <span class="glyphicon glyphicon-ok-sign" style="color:#f4b942">
+                  </span><%= t "users.rate" %></h4>
+                </td>
+              </tr>
+              <tr>
+                <td class="first"><h4>
+                  <span class="glyphicon glyphicon-list-alt" style="color:#f4b942">
+                  </span><%= t "users.skill" %></h4>
+                </td>
+                <td class="second"><h4>
+                  <span class="glyphicon glyphicon-certificate" style="color:#f4b942">
+                  </span><%= t "users.cetificate" %></h4>
+                </td>
+              </tr>
+            </table>
+            <hr>
+          </div>
+        </div>
+        <center>
+          <h5 class="text-left">
+            <strong>
+              <span class="glyphicon glyphicon-user" >
+                <%= t "users.biography" %>
+                <h5><%= participate.user.biography %></h5><br>
+              </span>
+            </strong>
+          </h5>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>

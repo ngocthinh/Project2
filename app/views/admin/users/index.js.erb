@@ -1,0 +1,2 @@
+$('#users').append("<%= j (render partial: @users)%>");
+$('#load_more').replaceWith("<%= j (link_to_next_page(@users, (t 'load_more'), remote: true, id: 'load_more', class: 'btn btn-primary'))%>")

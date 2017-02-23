@@ -1,0 +1,1 @@
+function submitNewcomment(){$("#user_search").keydown(function(e){if(13==e.keyCode)return $("#search_form").submit(),!1})}

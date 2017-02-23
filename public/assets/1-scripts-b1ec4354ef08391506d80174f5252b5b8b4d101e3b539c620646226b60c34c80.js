@@ -1,0 +1,1 @@
+jQuery(function(t){"use strict";!function(){t(".st-counter").counterUp({delay:10,time:1500})}()});

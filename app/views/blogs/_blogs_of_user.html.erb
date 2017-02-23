@@ -1,0 +1,23 @@
+<% if !user.posts.blog.blank? %>
+  <div class="row">
+    <header class="main-box-header clearfix">
+      <h2 class="margin-left-30"><%= t "blog_of_user" %></h2>
+    </header>
+    <% user.posts.blog.each do |blog| %>
+      <div class="col-md-4">
+        <div class="product-item">
+          <div class="pi-img-wrapper">
+            <%= image_tag blog.image.url, class: "img-responsive resize-related-blog width-100" %>
+            <div>
+              <%= link_to t("view.blog"), blog_path(I18n.locale, blog), class: "btn" %>
+            </div>
+          </div>
+          <h3><%= link_to blog.title, blog_path(I18n.locale, blog) %></h3>
+          <div class="pi-price"><%= blog.user_name %></div>
+          <%= link_to t("view.blog"), blog_path(I18n.locale, blog), class: "btn btn-view-post" %>
+          <div class="sticker sticker-new"></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

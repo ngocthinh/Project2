@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <%= link_to "#{t ("like_button")} #{image_tag("like-down.png", class: "like-button")}"
+    .html_safe, likes_path(id: project.id, locale: I18n.locale), method: :post,
+    class: "btn btn-default stat-item active", id: "like-post", remote: true %>
+<% else %>
+  <%= link_to "#{t ("like_button")} #{image_tag("like-down.png", class: "like-button")}"
+  .html_safe, likes_path(id: project.id, locale: I18n.locale), method: :post,
+  class: "btn btn-default stat-item active", id: "like-post" %>
+<% end %>

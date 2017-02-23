@@ -1,0 +1,6 @@
+<%= form_for message, remote: true, authenticity_token: true, id: "message_form" do |f| %>
+  <%= f.text_area :content, class: "form-control", id: "submit_message",
+    data: {textarea: "message"}, placeholder: true %>
+  <%= f.hidden_field :project_id, value: @project.id %>
+  <%= f.submit t("send"), class: "btn btn-primary", style: "display: none", data: {send: "message"} %>
+<% end %>

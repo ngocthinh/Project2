@@ -1,0 +1,25 @@
+<div class="row msg_container base_sent">
+  <div class="col-md-10 col-xs-10">
+    <div class="messages msg_sent">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr class="row1">
+          <td class="time-chat-right">
+          <%= link_to message.user.name, user_path(I18n.locale, message.user) %>
+          </td>
+        </tr>
+        <tr class="row1">
+          <td><%= message.content %></td>
+        </tr>
+        <tr class="row1">
+          <td><div class="time-chat-right" >
+            <%= I18n.l message.created_at, format: t(".chat_time") %>
+          </div></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="avatar-chatbox">
+    <%= link_to (image_tag message.user.avatar.url, class: "img-circle"),
+      user_path(I18n.locale, message.user) %>
+  </div>
+</div>
