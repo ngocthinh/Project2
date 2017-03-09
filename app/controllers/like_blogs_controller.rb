@@ -6,10 +6,13 @@ class LikeBlogsController < ApplicationController
     @like = @blog.likes.build user_id: current_user.id
     if @like.save
       @notification = create_notification @like
+      #ActionCable.server.broadcast "notifications:#{current_user.id}", {notification: @notification}
+      #ActionCable.server.broadcast "notifications:4", {html: "<div>Hello world</div>"}
+       ActionCable.server.broadcast "notifications:4", {html: "<div>Hello world</div>"}
       respond_to do |format|
         format.js
       end
-    end 
+    end
   end
 
   def destroy
@@ -25,12 +28,17 @@ class LikeBlogsController < ApplicationController
 
   def create_notification like
     return if like.target.user_id == current_user.id
-      like.target.notifications.create! user_id: like.target.user_id, 
+      like.target.notifications.create! user_id: like.target.user_id,
       user_create_id: like.user_id, notice_type: Settings.like
   end
 
   def load_blog
     @blog = Post.find_by id: params[:id]
     render file: Settings.page_404_url unless @blog
+  end
+
+  def render_notification notification
+    ApplicationController.renderer.render(partial: "notifications/notification",
+      locals: { notification: notification })
   end
 end

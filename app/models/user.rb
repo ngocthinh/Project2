@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :likes, as: :target
   has_many :target_techniques, as: :target
   has_many :notifications, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   mount_uploader :avatar, ImageUploader
   mount_uploader :cover_photo, ImageUploader
@@ -32,6 +33,10 @@ class User < ApplicationRecord
   ratyrate_rateable :rating
 
   ratyrate_rater
+
+  def self.by_person
+    Project.find_by id: 1
+  end
 
   def self.from_omniauth auth
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

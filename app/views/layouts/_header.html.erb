@@ -20,7 +20,7 @@
           <li><%= link_to t("header.menu.new"), news_index_path(I18n.locale) %></li>
           <li><%= link_to t("member"), users_path %></li>
           <% if user_signed_in? %>
-            <li class = "menu_notifications">
+            <li class = "menu_notifications" id = "menu_notifications">
               <%= link_to "#" do %>
                 <span class="badge badge-danger" data-noti-count="<%= user_signed_in? ? current_user.notifications.uncheck : 0 %>">
                   <%= user_signed_in? ? current_user.notifications.uncheck : 0 %>

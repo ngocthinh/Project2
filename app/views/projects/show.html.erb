@@ -40,8 +40,8 @@
             <span><%= @project.created_at %></span>
             <span><%= t "in" %> <%= link_to @project.category.name, "" %></span>
           </div>
-          <%= social_share_button_tag(@project.name, url: "https://immense-wildwood-15875.herokuapp.com//#{I18n.locale}/projects/#{@project.id}", :popup => "true") %>
-          
+          <%= social_share_button_tag(@project.name + @project.description, url: "https://immense-wildwood-15875.herokuapp.com//#{I18n.locale}/projects/#{@project.id}", :popup => "true") %>
+
           <span class="st-border"></span>
         </div>
       </div>
@@ -191,4 +191,6 @@
       </div>
     </div>
   </div>
+</div>
+<div id="notifications" class = "notifications">
 </div>
