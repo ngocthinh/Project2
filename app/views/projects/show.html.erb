@@ -40,7 +40,7 @@
             <span><%= @project.created_at %></span>
             <span><%= t "in" %> <%= link_to @project.category.name, "" %></span>
           </div>
-          <%= social_share_button_tag(@project.name + @project.description, url: "https://immense-wildwood-15875.herokuapp.com//#{I18n.locale}/projects/#{@project.id}", :popup => "true") %>
+          <%= social_share_button_tag(@project.name + @project.description, url: "https://immense-wildwood-15875.herokuapp.com/#{I18n.locale}/projects/#{@project.id}", :image => "https://raw.github.com/vkulpa/social-share-button/master/lib/assets/images/sprites/social-share-button/tumblr.png", :'data-type' => 'photo', :popup => "true") %>
 
           <span class="st-border"></span>
         </div>
@@ -91,7 +91,10 @@
           </div>
           <div class="col-md-12 padding-top-10">
             <p class="text-left">
-              <span class="glyphicon glyphicon glyphicon-th-large gold"></span>
+              <span style="padding-right:3px; padding-top: 3px; display:inline-block;">
+
+             <%= image_tag "edit_icon.png", class: "delete-comment" %>
+              </span>
               <b> <%= t "server_informations" %>: </b><br />
               <%= @project.server_information %>
             </p>
@@ -153,10 +156,14 @@
           <div class="tab-pane" id="comment">
             <div class="row margin-bottom-50">
               </br>
+              <% if user_signed_in? %>
               <%= render partial: "comments/comment_form", locals: {project: @project}%>
+              <% end %>
             </div>
             <div class="entries" id="entries">
-            <%= render @comments %>
+            <% @comments.each do |comment| %>
+              <%= render partial: "comments/comment", locals: {comment: comment} %>
+            <% end %>
           </div>
           <center>
             <%= link_to_next_page @comments, (t "load_more"), remote: true,

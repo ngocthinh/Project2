@@ -1,0 +1,15 @@
+<div class= "form-edit">
+<%= form_for  @comment, url: project_comment_path(I18n.locale, [@comment.target, @comment]), remote: :true do |f| %>
+  <div class="col-md-12" data-turbolinks-temporary>
+    <div class="col-md-12">
+    <div class="comment-from">
+      <%= f.text_area :content, value: @comment.content, class: "form-control"%>
+      <%= f.hidden_field :id, value: @comment.id %>
+    </div>
+    <div>
+       <%= f.submit "save", :class => "comment-edit"%>
+    </div>
+    </div>
+  </div>
+<% end %>
+</div>

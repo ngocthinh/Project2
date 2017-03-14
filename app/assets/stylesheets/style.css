@@ -39,7 +39,49 @@ body {
   text-align: center;
 }
 
+.form-edit{
+  margin-left: 30px;
+}
+
+.comment-edit{
+    float:right;
+    background-color: #4C7AAF;
+    height: 24px;
+    width: 48px;
+    border: none;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;#006BFF
+}
+
+#comment-time{
+  align: center;
+  margin-left: 50px;
+}
+
+#comment-content{
+  margin-left: 50px;
+   -webkit-box-decoration-break: clone;
+}
+
+#comment-name{
+  margin-left: 10px;
+}
+
+#user-image-comment{
+  height: 45px;
+  width: 45px;
+}
+
 .like-button {
+  height: 20px;
+  width: 20px;
+}
+
+.delete-comment{
   height: 20px;
   width: 20px;
 }

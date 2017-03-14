@@ -1,8 +1,15 @@
+
+<div id = "comment-<%= comment.id %>">
+<div class="col-sm-12">
+<div class="col-sm-9">
 <div class="col-sm-12 comment_box">
   <div class="panel panel-white post panel-shadow content-height">
     <div class="post-heading">
+    <div class="pull-left image">
+       <img src=<%= comment.user.avatar.url %> class="img-circle avatar" alt="user profile image" id = "user-image-comment">
+</div>
       <div class="pull-left meta">
-        <div class="title h5">
+        <div class="title h5" id = "comment-name">
           <a href="#"><b><%= comment.name %></b></a>
         </div>
       </div>
@@ -12,13 +19,23 @@
 <div class="content">
   <div class="col-sm-12 comment_box">
     <div class="post-description">
-      <span id="comment_content"><%= comment.content %></span>
+      <span id="comment-content"><%= comment.content %></span>
     </div>
   </div>
   </hr>
   <div class="col-sm-12 comment_box">
-    <h6 class="text-muted time">
+    <h6 class="text-muted time" id = "comment-time">
       <%= time_ago_in_words(comment.created_at)  unless comment.created_at.blank? %>
     </h6>
   </div>
+</div>
+<div id= "comment-edit-<%= comment.id %>"></div>
+</div>
+<div class="col-sm-3">
+ <% if  comment.user == current_user %>
+<%= link_to image_tag("delete.png", class: "delete-comment").html_safe, project_comment_path(I18n.locale,comment.target, comment), method: :delete, remote: true %>
+<%= link_to image_tag("edit.png", class: "delete-comment").html_safe, edit_project_comment_path(I18n.locale,comment.target, comment), remote: true %>
+<% end %>
+</div>
+</div>
 </div>

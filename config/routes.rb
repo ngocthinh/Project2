@@ -10,11 +10,11 @@ Rails.application.routes.draw do
     resources :blogs
     resources :news
     resources :likes
-    resources :comments
     resources :contacts
     resources :categories
     resources :like_blogs
     resources :projects do
+      resources :comments
       resources :participates
     end
     namespace :admin do
